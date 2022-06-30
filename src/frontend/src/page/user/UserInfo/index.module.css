@@ -1,0 +1,871 @@
+@charset "utf-8";
+
+/* CSS Document */
+
+
+/*css预设*/
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+/*将所有HTML元素的默认边距清0*/
+
+html,
+body {
+    font-size: 12px;
+    font-family: "微软雅黑", "arial";
+    color: #262626;
+    background: #FFF;
+}
+
+
+/*对HTML元素中的字体、颜色、背景色进行初始设置*/
+
+ul li,
+ol li {
+    list-style: none;
+}
+
+
+/*将列表标签的默认样式清除*/
+
+a {
+    text-decoration: none;
+    outline: none;
+    color: #262626;
+    blr: expression(this.onFocus=this.blur());
+}
+
+
+/*将超链接的下划线去掉以及在ie6中点击出现的虚线框去掉*/
+
+img {
+    border: none;
+}
+
+
+/*图片的默认边框去掉 */
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+caption,
+th,
+td {
+    font-weight: normal;
+    text-align: left;
+}
+
+input,
+textarea,
+select,
+button {
+    font-size: 100%;
+    font-family: inherit;
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+}
+
+label,
+button {
+    cursor: pointer
+}
+
+textarea {
+    white-space: pre;
+    resize: none;
+    border: 1px solid #ececec;
+}
+
+article,
+aside,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section,
+summary {
+    display: block;
+}
+
+
+/*清楚浮动*/
+
+.clearfix:after {
+    content: "";
+    display: block;
+    clear: both;
+    height: 0;
+    line-height: 0;
+    visibility: hidden;
+}
+
+.clearfix {
+    zoom: 1;
+}
+
+
+/*解决ie6的兼容性问题*/
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+.mt {
+    margin-top: 80px;
+}
+
+.wrapper {
+    width: 1160px;
+    margin: 0 auto;
+}
+
+
+/*********************head********************/
+
+.head {
+    margin-top: 30px;
+    min-width: 1160px;
+    position: relative;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.head h1 img {
+    width: 80%;
+    display: block;
+}
+
+.head div p {
+    margin-top: 20px;
+}
+
+.head div p a {
+    color: #262626;
+    padding: 0 10px;
+    font-size: 14px;
+}
+
+.head div p a:nth-child(1) {
+    border-right: 1px solid #dbdbdb;
+}
+
+.head div form {
+    width: 160px;
+    height: 30px;
+    line-height: 30px;
+    margin: 0 10px;
+    margin-top: 13px;
+    border-bottom: 1px solid #262626;
+}
+
+.head div form input:nth-child(1) {
+    background: none;
+    text-indent: 8px;
+}
+
+.head div form input:nth-child(2) {
+    float: right;
+    width: 13%;
+    padding-bottom: 10px;
+    background: url(../../../assets/img/ss.png) no-repeat right 5px;
+    cursor: pointer;
+}
+
+.head div.btn {
+    margin-top: 20px;
+    position: relative;
+}
+
+.head div.btn a {
+    float: left;
+    margin: 0 10px;
+}
+
+.head ul {
+    float: left;
+    margin-left: 18%;
+    line-height: 50px;
+}
+
+.head ul li {
+    float: left;
+    padding: 0 20px;
+}
+
+.head ul li>a {
+    color: #262626;
+    font-size: 14px;
+    display: inline-block;
+    position: relative;
+}
+
+.head ul li a:before {
+    content: "";
+    background: #A10000;
+    position: absolute;
+    bottom: -3px;
+    z-index: -1;
+    transform: scaleX(0);
+    transition: all .5s ease;
+    -webkit-transition: all .5s ease;
+}
+
+.head ul li:nth-child(1) a:before {
+    left: -12px;
+}
+
+.head ul li>a:hover {
+    color: #A10000;
+}
+
+.head ul li>a:hover:before {
+    width: 56px;
+    height: 2px;
+    transform: scaleX(1);
+    transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+    -webkit-transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+;
+    z-index: 9999;
+}
+
+.head div.sList {
+    position: absolute;
+    top: 113px;
+    left: 0;
+    z-index: 3;
+    background: #fff;
+    width: 100%;
+    display: none;
+}
+
+.head div.sList div {
+    text-align: center;
+    padding: 20px 0;
+    display: flex;
+}
+
+.head div.sList div a {
+    flex: 1 1 20%;
+    border-right: 1px solid #dbdbdb;
+}
+
+.head div.sList div a:last-child {
+    border-right: none;
+}
+
+.head div.sList div dl dt img {
+    width: 70%;
+}
+
+.head div.sList div dl dd {
+    font-size: 14px;
+}
+
+.head div.sList2 {
+    display: none;
+    position: absolute;
+    top: 113px;
+    left: 0;
+    z-index: 3;
+    background: #fff;
+    width: 100%;
+}
+
+.head div.sList2 div {
+    width: 46%;
+    margin: 0 auto;
+}
+
+.head div.sList2 a {
+    float: left;
+    margin-right: 40px;
+}
+
+
+/*定位样式*/
+
+.ding {
+    margin-top: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    padding: 20px 0;
+    background: #fff;
+    z-index: 100;
+}
+
+.ding h1 {
+    position: absolute;
+    left: 10%;
+    top: 20%;
+}
+
+.ding h1 img {
+    width: 65%;
+}
+
+
+/*.ding #top1{
+	display: none;
+}*/
+
+.ding #top1 p,
+.ding #top1 div {
+    display: none;
+}
+
+.ding ul li a:before {
+    bottom: -25px;
+}
+
+.ding div.sList,
+.ding div.sList2 {
+    top: 81px;
+}
+
+.ding ul {
+    float: left;
+    margin-left: 18%;
+    line-height: 0;
+}
+
+.ding div form {
+    width: 185px;
+    height: 30px;
+    line-height: 30px;
+    margin: 0 10px;
+    margin-top: 5px;
+    border-bottom: 1px solid #262626;
+}
+
+.ding div.sList2 a {
+    float: left;
+    margin-right: 40px;
+    line-height: 38px;
+}
+
+.ding div.sList div dl dd {
+    line-height: 35px;
+}
+
+
+/*头部二维码*/
+
+.head div.btn p {
+    display: none;
+}
+
+.head div.btn p a {
+    width: 74px;
+    height: 74px;
+    position: absolute;
+    top: 30px;
+    background: #fff;
+    right: 10px;
+    padding: 2px;
+    z-index: 10;
+    border: 1px solid #A10000;
+}
+
+.head div.btn p a img {
+    width: 100%;
+}
+
+.head div.btn p a:before {
+    position: absolute;
+    top: -5px;
+    left: 50%;
+    width: 0;
+    height: 0;
+    margin-left: -5px;
+    vertical-align: middle;
+    content: " ";
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid #A10000;
+    border-left: 5px solid transparent;
+}
+
+
+/*********************address********************/
+
+.address {
+    height: 40px;
+    line-height: 40px;
+    border-bottom: 1px solid #DBDBDB;
+}
+
+.address a,
+.address span {
+    float: left;
+    color: #777;
+}
+
+.address span {
+    margin: 0 20px;
+}
+
+.address a.on {
+    color: #262626;
+}
+
+
+/*********************footer********************/
+
+.footer {
+    min-width: 1160px;
+}
+
+.footer .top {
+    padding: 30px 0;
+    border-top: 1px solid #DBDBDB;
+    border-bottom: 1px solid #DBDBDB;
+}
+
+.footer .top .wrapper {
+    display: flex;
+}
+
+.footer .top .wrapper div {
+    flex: 1 1 25%;
+    border-right: 1px solid #dbdbdb;
+}
+
+.footer .top .wrapper div:last-child {
+    border-right: none;
+}
+
+.footer .top .wrapper div a img {
+    display: block;
+}
+
+.footer .top .wrapper div a {
+    margin-left: 25%;
+}
+
+.footer .top .wrapper div span {
+    margin-top: 15px;
+    margin-left: 10px;
+    display: block;
+    font-size: 16px;
+}
+
+.footer p.dibu {
+    background: #000;
+    padding: 30px 0;
+    text-align: center;
+    color: #fff;
+}
+
+
+/*********************gotop********************/
+
+body {
+    position: relative;
+}
+
+.gotop {
+    position: fixed;
+    right: 20px;
+    top: 400px;
+    z-index: 20;
+}
+
+.gotop a {
+    display: block;
+    width: 48px;
+    height: 48px;
+    line-height: 38px;
+    background: #f4f4f4;
+    margin-bottom: 10px;
+    border: 1px solid #d6d6d6;
+    cursor: pointer;
+}
+
+.gotop dl dt {
+    margin: 0 auto;
+    width: 20px;
+    padding-top: 10px;
+}
+
+.gotop dl.goCart {
+    position: relative;
+}
+
+.gotop dl.goCart span {
+    position: absolute;
+    top: -9px;
+    right: -8px;
+    width: 16px;
+    height: 16px;
+    border-radius: 8px;
+    background: #c10000;
+    color: #fff;
+    text-align: center;
+    line-height: 16px;
+}
+
+.gotop dl dd {
+    display: none;
+    background: #a10000;
+    height: 41px;
+    width: 41px;
+    color: #fff;
+    padding: 8px 0 0 10px;
+    line-height: 15px;
+}
+
+.gotop p {
+    border: 1px solid #A10000;
+    padding: 10px;
+    position: absolute;
+    background: #f4f4f4;
+    top: 66px;
+    left: -130px;
+    display: none;
+}
+
+.gotop p:before {
+    position: absolute;
+    top: 50%;
+    right: -6px;
+    width: 0;
+    margin-top: -5px;
+    height: 0;
+    margin-left: -5px;
+    vertical-align: middle;
+    content: " ";
+    border-bottom: 5px solid transparent;
+    border-left: 5px solid #a10000;
+    border-top: 5px solid transparent;
+}
+
+/*bott*/
+.Bott{
+    background: #f5f5f5;
+}
+.Bott .zuo{
+    margin: 20px 20px 20px 0;
+    width: 180px;
+    background: #fff;
+    text-align: center;
+    line-height: 40px;
+    border: 1px solid #e4e4e4;
+}
+.Bott .zuo h3{
+    border-bottom: 1px solid #A10000;
+    cursor: pointer;
+    padding: 10px 0;
+    font-weight: normal;
+}
+.Bott .zuo h3 a {
+    display: block;
+}
+.Bott .zuo h3 a img{
+    display: block;
+    margin: 0 auto;
+}
+.Bott .zuo h3 p{
+    width: 70%;
+    margin: 0 auto;
+}
+.Bott .zuo h3 p span{
+    border-bottom: 1px solid #fff;
+}
+.Bott .zuo h3 span:hover{
+    color: #A10000;
+    border-bottom: 1px solid #A10000;
+}
+.Bott .zuo div{
+    background: #fcfcff;
+}
+.Bott .zuo  h4{
+    cursor: pointer;
+    width: 90%;
+    color: #444;
+    font-size: 14px;
+}
+.Bott .zuo ul li a{
+    display: inline-block;
+    color: #757575;
+    width: 40%;
+    text-align: left;
+    font-size: 14px;
+}
+.Bott .zuo ul li.on a,.Bott .zuo ul li a:hover{
+    color: #A10000;
+}
+
+.Bott .you{
+    background: #fff;
+    width: 840px;
+    padding: 50px;
+    margin: 20px 0;
+    border: 1px solid #e4e4e4;
+}
+.Bott .you  h2{
+    font-size: 22px;
+    font-weight: normal;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #E6E6E6;
+    margin-bottom: 30px;
+}
+
+/*个人信息*/
+.Bott .you .gxin{
+    display: flex;
+}
+.Bott .you .gxin div.tx{
+    flex: 1;
+    text-align: center;
+    margin-top: 10%;
+}
+.Bott .you .gxin div.tx a{
+    display: block;
+    width: 90px;
+    height: 90px;
+    border-radius: 45px;
+    border: 1px solid #e3e3e3;
+    padding: 1px;
+}
+.Bott .you .gxin div.tx a p{
+    color: #A10000;
+    margin-top: 5px;
+}
+
+
+.Bott .you .gxin div.xx{
+    flex: 3;
+}
+.Bott .you .gxin div.xx h3{
+    font-size: 16px;
+    padding: 25px 0 15px;
+    border-bottom: 1px solid #E6E6E6;
+}
+.Bott .you .gxin div.xx h3.clearfix{
+    padding: 0 0 15px;
+}
+.Bott .you .gxin div.xx h3.clearfix a{
+    font-weight: normal;
+    font-size: 12px;
+}
+.Bott .you .gxin div.xx div{
+    border-bottom: 1px solid #e6e6e6;
+    height: 40px;
+    line-height: 40px;
+    color: #666;
+}
+.Bott .you .gxin div.xx  a{
+    color: #A10000;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*bianji*/
+body{
+    position: relative;
+}
+/*遮罩*/
+.mask{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 20;
+    display: none;
+}
+/*编辑个人信息*/
+.bj,.xg{
+    width: 410px;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    margin-top: -180px;
+    margin-left: -220px;
+    z-index: 30;
+    background: #fff;
+    border-radius: 10px;
+    padding: 15px;
+    display: none;
+}
+.bj div a,.xg div a,.avatar div a{
+    width: 20px;
+    height: 20px;
+}
+.bj div a img,.xg div a img,.avatar div a img{
+    width: 100%;
+    display: block;
+}
+.bj h3,.xg h3,.avatar h3{
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e6e6e6;
+}
+.bj form,.xg form{
+    padding: 40px 50px;
+}
+.bj form p,.xg form p{
+    margin-bottom: 10px;
+    color: #666666;
+}
+.bj form p input,.xg form p input{
+    border:1px solid #e8e8e8;
+    width: 250px;
+    height: 40px;
+    line-height: 40px;
+    text-indent: 5px;
+}
+.bj form p:nth-child(3) input{
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+.bj form p:nth-child(3) span{
+    margin-right: 20px;
+}
+.bj form div,.xg form div{
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-around;
+}
+.bj form div input,.xg form div input{
+    display: inline-block;
+    width: 120px;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+    background: #fff;
+    border: 1px solid #e6e6e6;
+}
+.bj form div input:nth-child(1),.xg form div input:nth-child(1){
+    background: #A10000;
+    color: #FFFFFF;
+}
+
+
+
+/*上传头像*/
+.avatar{
+    width: 410px;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    margin-top: -180px;
+    margin-left: -220px;
+    z-index: 30;
+    background: #fff;
+    border-radius: 10px;
+    padding: 15px;
+    display: none;
+}
+.avatar form{
+    padding: 40px 50px;
+}
+.avatar form h4{
+    width: 65%;
+    margin: 0px auto 10px;
+}
+.avatar form p{
+    width: 65%;
+    margin: 5px auto 30px;
+}
+.avatar form  input:nth-child(2){
+    display:block;
+    width: 200px;
+    height: 40px;
+    line-height: 40px;
+    margin: 0 auto;
+    background: #A10000;
+    color: #FFFFFF;
+}
+.avatar form  input:nth-child(4){
+    display:block;
+    width: 150px;
+    height: 30px;
+    line-height: 30px;
+    margin: 0 auto;
+    background: #fff;
+    color: #000;
+    border: 1px solid #E0E0E0;
+}
+
+
+
+/*修改密码*/
+form.remima{
+    padding-left: 20px;
+}
+form.remima p{
+    margin-bottom:10px;
+}
+form.remima p:nth-child(1){
+    margin-bottom:15px;
+}
+form.remima p:nth-child(1) input[type=checkbox]{
+    margin-right:5px;
+    vertical-align: -2px;
+}
+form.remima p.op{
+    margin-left: 140px;
+    color: #757575;
+}
+form.remima p span{
+    display: inline-block;
+    width: 140px;
+    text-align: right;
+    font-size: 14px;
+}
+form.remima p input[type=text]{
+    display: inline-block;
+    width: 240px;
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid #E0E0E0;
+    text-indent: 10px;
+}
+form.remima p img{
+    display: inline-block;
+    margin-left: 10px;
+    vertical-align: -16px;
+    border: 1px solid #E0E0E0;
+}
+form.remima input[type=submit]{
+    display: block;
+    width: 60px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    margin:20px 0 0  30%;
+    background: #A10000;
+    color: #fff;
+}

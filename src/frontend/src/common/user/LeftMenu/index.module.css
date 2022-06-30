@@ -1,0 +1,1070 @@
+@charset "utf-8";
+
+/* CSS Document */
+
+
+/*css预设*/
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+/*将所有HTML元素的默认边距清0*/
+
+html,
+body {
+    font-size: 12px;
+    font-family: "微软雅黑", "arial";
+    color: #262626;
+    background: #FFF;
+}
+
+
+/*对HTML元素中的字体、颜色、背景色进行初始设置*/
+
+ul li,
+ol li {
+    list-style: none;
+}
+
+
+/*将列表标签的默认样式清除*/
+
+a {
+    text-decoration: none;
+    outline: none;
+    color: #262626;
+    blr: expression(this.onFocus=this.blur());
+}
+
+
+/*将超链接的下划线去掉以及在ie6中点击出现的虚线框去掉*/
+
+img {
+    border: none;
+}
+
+
+/*图片的默认边框去掉 */
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+caption,
+th,
+td {
+    font-weight: normal;
+    text-align: left;
+}
+
+input,
+textarea,
+select,
+button {
+    font-size: 100%;
+    font-family: inherit;
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+}
+
+label,
+button {
+    cursor: pointer
+}
+
+textarea {
+    white-space: pre;
+    resize: none;
+    border: 1px solid #ececec;
+}
+
+article,
+aside,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section,
+summary {
+    display: block;
+}
+
+
+/*清楚浮动*/
+
+.clearfix:after {
+    content: "";
+    display: block;
+    clear: both;
+    height: 0;
+    line-height: 0;
+    visibility: hidden;
+}
+
+.clearfix {
+    zoom: 1;
+}
+
+
+/*解决ie6的兼容性问题*/
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+.mt {
+    margin-top: 80px;
+}
+
+.wrapper {
+    width: 1160px;
+    margin: 0 auto;
+}
+
+
+/*********************head********************/
+
+.head {
+    margin-top: 30px;
+    min-width: 1160px;
+    position: relative;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.head h1 img {
+    width: 80%;
+    display: block;
+}
+
+.head div p {
+    margin-top: 20px;
+}
+
+.head div p a {
+    color: #262626;
+    padding: 0 10px;
+    font-size: 14px;
+}
+
+.head div p a:nth-child(1) {
+    border-right: 1px solid #dbdbdb;
+}
+
+.head div form {
+    width: 160px;
+    height: 30px;
+    line-height: 30px;
+    margin: 0 10px;
+    margin-top: 13px;
+    border-bottom: 1px solid #262626;
+}
+
+.head div form input:nth-child(1) {
+    background: none;
+    text-indent: 8px;
+}
+
+.head div form input:nth-child(2) {
+    float: right;
+    width: 13%;
+    padding-bottom: 10px;
+    background: url(../../../assets/img/ss.png) no-repeat right 5px;
+    cursor: pointer;
+}
+
+.head div.btn {
+    margin-top: 20px;
+    position: relative;
+}
+
+.head div.btn a {
+    float: left;
+    margin: 0 10px;
+}
+
+.head ul {
+    float: left;
+    margin-left: 18%;
+    line-height: 50px;
+}
+
+.head ul li {
+    float: left;
+    padding: 0 20px;
+}
+
+.head ul li>a {
+    color: #262626;
+    font-size: 14px;
+    display: inline-block;
+    position: relative;
+}
+
+.head ul li a:before {
+    content: "";
+    background: #A10000;
+    position: absolute;
+    bottom: -3px;
+    z-index: -1;
+    transform: scaleX(0);
+    transition: all .5s ease;
+    -webkit-transition: all .5s ease;
+}
+
+.head ul li:nth-child(1) a:before {
+    left: -12px;
+}
+
+.head ul li>a:hover {
+    color: #A10000;
+}
+
+.head ul li>a:hover:before {
+    width: 56px;
+    height: 2px;
+    transform: scaleX(1);
+    transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+    -webkit-transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+;
+    z-index: 9999;
+}
+
+.head div.sList {
+    position: absolute;
+    top: 113px;
+    left: 0;
+    z-index: 3;
+    background: #fff;
+    width: 100%;
+    display: none;
+}
+
+.head div.sList div {
+    text-align: center;
+    padding: 20px 0;
+    display: flex;
+}
+
+.head div.sList div a {
+    flex: 1 1 20%;
+    border-right: 1px solid #dbdbdb;
+}
+
+.head div.sList div a:last-child {
+    border-right: none;
+}
+
+.head div.sList div dl dt img {
+    width: 70%;
+}
+
+.head div.sList div dl dd {
+    font-size: 14px;
+}
+
+.head div.sList2 {
+    display: none;
+    position: absolute;
+    top: 113px;
+    left: 0;
+    z-index: 3;
+    background: #fff;
+    width: 100%;
+}
+
+.head div.sList2 div {
+    width: 46%;
+    margin: 0 auto;
+}
+
+.head div.sList2 a {
+    float: left;
+    margin-right: 40px;
+}
+
+
+/*定位样式*/
+
+.ding {
+    margin-top: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    padding: 20px 0;
+    background: #fff;
+    z-index: 100;
+}
+
+.ding h1 {
+    position: absolute;
+    left: 10%;
+    top: 20%;
+}
+
+.ding h1 img {
+    width: 65%;
+}
+
+
+/*.ding #top1{
+	display: none;
+}*/
+
+.ding #top1 p,
+.ding #top1 div {
+    display: none;
+}
+
+.ding ul li a:before {
+    bottom: -25px;
+}
+
+.ding div.sList,
+.ding div.sList2 {
+    top: 81px;
+}
+
+.ding ul {
+    float: left;
+    margin-left: 18%;
+    line-height: 0;
+}
+
+.ding div form {
+    width: 185px;
+    height: 30px;
+    line-height: 30px;
+    margin: 0 10px;
+    margin-top: 5px;
+    border-bottom: 1px solid #262626;
+}
+
+.ding div.sList2 a {
+    float: left;
+    margin-right: 40px;
+    line-height: 38px;
+}
+
+.ding div.sList div dl dd {
+    line-height: 35px;
+}
+
+
+/*头部二维码*/
+
+.head div.btn p {
+    display: none;
+}
+
+.head div.btn p a {
+    width: 74px;
+    height: 74px;
+    position: absolute;
+    top: 30px;
+    background: #fff;
+    right: 10px;
+    padding: 2px;
+    z-index: 10;
+    border: 1px solid #A10000;
+}
+
+.head div.btn p a img {
+    width: 100%;
+}
+
+.head div.btn p a:before {
+    position: absolute;
+    top: -5px;
+    left: 50%;
+    width: 0;
+    height: 0;
+    margin-left: -5px;
+    vertical-align: middle;
+    content: " ";
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid #A10000;
+    border-left: 5px solid transparent;
+}
+
+
+/*********************address********************/
+
+.address {
+    height: 40px;
+    line-height: 40px;
+    border-bottom: 1px solid #DBDBDB;
+}
+
+.address a,
+.address span {
+    float: left;
+    color: #777;
+}
+
+.address span {
+    margin: 0 20px;
+}
+
+.address a.on {
+    color: #262626;
+}
+
+
+/*********************footer********************/
+
+.footer {
+    min-width: 1160px;
+}
+
+.footer .top {
+    padding: 30px 0;
+    border-top: 1px solid #DBDBDB;
+    border-bottom: 1px solid #DBDBDB;
+}
+
+.footer .top .wrapper {
+    display: flex;
+}
+
+.footer .top .wrapper div {
+    flex: 1 1 25%;
+    border-right: 1px solid #dbdbdb;
+}
+
+.footer .top .wrapper div:last-child {
+    border-right: none;
+}
+
+.footer .top .wrapper div a img {
+    display: block;
+}
+
+.footer .top .wrapper div a {
+    margin-left: 25%;
+}
+
+.footer .top .wrapper div span {
+    margin-top: 15px;
+    margin-left: 10px;
+    display: block;
+    font-size: 16px;
+}
+
+.footer p.dibu {
+    background: #000;
+    padding: 30px 0;
+    text-align: center;
+    color: #fff;
+}
+
+
+/*********************gotop********************/
+
+body {
+    position: relative;
+}
+
+.gotop {
+    position: fixed;
+    right: 20px;
+    top: 400px;
+    z-index: 20;
+}
+
+.gotop a {
+    display: block;
+    width: 48px;
+    height: 48px;
+    line-height: 38px;
+    background: #f4f4f4;
+    margin-bottom: 10px;
+    border: 1px solid #d6d6d6;
+    cursor: pointer;
+}
+
+.gotop dl dt {
+    margin: 0 auto;
+    width: 20px;
+    padding-top: 10px;
+}
+
+.gotop dl.goCart {
+    position: relative;
+}
+
+.gotop dl.goCart span {
+    position: absolute;
+    top: -9px;
+    right: -8px;
+    width: 16px;
+    height: 16px;
+    border-radius: 8px;
+    background: #c10000;
+    color: #fff;
+    text-align: center;
+    line-height: 16px;
+}
+
+.gotop dl dd {
+    display: none;
+    background: #a10000;
+    height: 41px;
+    width: 41px;
+    color: #fff;
+    padding: 8px 0 0 10px;
+    line-height: 15px;
+}
+
+.gotop p {
+    border: 1px solid #A10000;
+    padding: 10px;
+    position: absolute;
+    background: #f4f4f4;
+    top: 66px;
+    left: -130px;
+    display: none;
+}
+
+.gotop p:before {
+    position: absolute;
+    top: 50%;
+    right: -6px;
+    width: 0;
+    margin-top: -5px;
+    height: 0;
+    margin-left: -5px;
+    vertical-align: middle;
+    content: " ";
+    border-bottom: 5px solid transparent;
+    border-left: 5px solid #a10000;
+    border-top: 5px solid transparent;
+}
+
+/*bott*/
+.Bott{
+    background: #f5f5f5;
+}
+.Bott .zuo{
+    margin: 20px 20px 20px 0;
+    width: 180px;
+    background: #fff;
+    text-align: center;
+    line-height: 40px;
+    border: 1px solid #e4e4e4;
+}
+.Bott .zuo h3{
+    border-bottom: 1px solid #A10000;
+    cursor: pointer;
+    padding: 10px 0;
+    font-weight: normal;
+}
+.Bott .zuo h3 a img{
+    display: block;
+    margin: 0 auto;
+}
+.Bott .zuo h3 p{
+    width: 70%;
+    margin: 0 auto;
+}
+.Bott .zuo h3 p span{
+    border-bottom: 1px solid #fff;
+}
+.Bott .zuo h3 span:hover{
+    color: #A10000;
+    border-bottom: 1px solid #A10000;
+}
+.Bott .zuo div{
+    background: #fcfcff;
+}
+.Bott .zuo  h4{
+    cursor: pointer;
+    width: 90%;
+    color: #444;
+    font-size: 14px;
+}
+.Bott .zuo ul li a{
+    display: inline-block;
+    color: #757575;
+    width: 65%;
+    text-align: left;
+    font-size: 14px;
+}
+.Bott .zuo ul li.on a,.Bott .zuo ul li a:hover{
+    color: #A10000;
+}
+
+
+
+.Bott .you{
+    background: #fff;
+    width: 840px;
+    padding: 50px;
+    margin: 20px 0;
+    border: 1px solid #e4e4e4;
+}
+
+.Bott .you .my h2{
+    font-size: 22px;
+    font-weight: normal;
+}
+.Bott .you .my h3{
+    font-size: 18px;
+    font-weight: normal;
+    margin: 10px 0;
+}
+.Bott .you .my h3 span{
+    font-size: 15px;
+}
+.Bott .you  .my a{
+    font-size: 14px;
+    font-weight: normal;
+    color: #404040;
+    margin: 8px 0 0 15px;
+}
+.Bott .you .dlist{
+    margin: 40px 0 32px;
+}
+.Bott .you .dlist ul{
+    margin: 10px;
+}
+.Bott .you .dlist ul li{
+    float: left;
+    font-size: 16px;
+    padding:0 20px ;
+    border-right: 1px solid #e0e0e0;
+}
+.Bott .you .dlist ul li:last-child{
+    border-right: none;
+}
+.Bott .you .dlist ul li a{
+    display: inline-block;
+    color: #8c8c8c;
+}
+.Bott .you .dlist ul li:nth-child(1){
+    padding:0 20px 0 0 ;
+}
+.Bott .you .dlist ul li.on a{
+    color: #A10000;
+}
+.Bott .you .dlist form{
+    width: 260px;
+    height: 40px;
+    border: 1px solid #e0e0e0;
+}
+.Bott .you .dlist form input:nth-child(1){
+    float: left;
+    text-indent: 15px;
+    width: 219px;
+    line-height: 40px;
+}
+.Bott .you .dlist form input:nth-child(2){
+    float: right;
+    width: 40px;
+    height: 40px;
+    border-left: 1px solid #e0e0e0;
+    background: url(../../../assets/img/ds.png) no-repeat center center;
+}
+.Bott .you .dkuang{
+    border: 1px solid #b0b0b0;
+    position: relative;
+    margin-bottom: 20px;
+}
+.Bott .you .dkuang p.one{
+    font-size: 16px;
+    color: #8c8c8c;
+    padding: 30px 0 20px 30px;
+}
+.Bott .you .dkuang div.vewwl a.ckwl{
+    font-size: 12px;
+    display: inline-block;
+    margin: 35px 0 0 10px;
+}
+.Bott .you .dkuang div.vewwl a.ckwl:hover{
+    color: #A10000;
+}
+
+.Bott .you .dkuang .word{
+    color: #757575;
+    border-bottom: 1px solid #e0e0e0;
+}
+.Bott .you .dkuang .word ul{
+    margin: 0 0 30px 30px;
+}
+.Bott .you .dkuang .word ul li{
+    float: left;
+    padding: 0 8px;
+    border-right: 1px solid #e0e0e0;
+}
+.Bott .you .dkuang .word ul li:first-child{
+    padding:0 8px 0 0;
+}
+.Bott .you .dkuang .word ul li:last-child{
+    border-right: none;
+}
+.Bott .you .dkuang .word p.fr{
+    margin-right: 30px;
+}
+.Bott .you .dkuang .word p.fr span{
+    font-size: 20px;
+    color: #A10000;
+}
+.Bott .you .dkuang .shohou{
+    padding: 30px;
+}
+.Bott .you .dkuang .shohou a.fl{
+    width: 69px;
+    margin-right: 30px;
+}
+.Bott .you .dkuang .shohou a.fl img{
+    width: 100%;
+    display: block;
+}
+.Bott .you .dkuang .shohou p.fl a{
+    display: block;
+}
+.Bott .you .dkuang .shohou p.fl a:nth-child(1){
+    color: #666;
+    margin-bottom: 10px;
+}
+.Bott .you .dkuang .shohou p.fl a:nth-child(1):hover{
+    color: #A10000;
+}
+.Bott .you .dkuang .shohou p.fr a{
+    display: block;
+    width: 118px;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    border: 1px solid #B0B0B0;
+    color: #666;
+    transition: all .5s;
+}
+.Bott .you .dkuang .shohou p.fr a:hover{
+    background: #757575;
+    color: #fff;
+    transform: translate(0.5);
+}
+.Bott .you .dkuang .shohou p.fr a:nth-child(1){
+    margin-bottom: 10px;
+}
+
+.Bott .you .deng p.one{
+    color: #A10000;
+}
+.Bott .you .deng .shohou p.fr a:nth-child(1){
+    background: #A10000;
+    color: #fff;
+    border: 1px solid #A10000;
+}
+
+
+
+
+
+
+
+.Bott .you .fenye{
+    margin: 45px auto 0;
+    width: 140px;
+}
+.Bott .you .fenye a{
+    float: left;
+}
+.Bott .you .fenye a:nth-child(1),.Bott .you .fenye a:nth-child(3){
+    margin-top: 6px;
+}
+.Bott .you .fenye a:nth-child(2){
+    width: 48px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    background: #757575;
+    color: #fff;
+    margin: 0 35px;
+}
+
+
+/*订单详情*/
+
+.you .orderList .orderList1,.you .orderList .orderList2{
+    border-bottom: 1px solid #E0E0E0;
+    padding: 15px 0;
+    cursor: pointer;
+}
+.you .orderList1:nth-child(1){
+    border-top: 1px solid #E0E0E0;
+}
+.you .orderList1 h3,.you .orderList2 h3{
+    font-size: 15px;
+    margin-bottom: 10px;
+    font-weight: normal;
+}
+.you .orderList1:nth-child(1) div p{
+    font-size: 14px;
+    margin-top:10px ;
+}
+.you .orderList1:nth-child(1) div p a{
+    color: #757575;
+}
+.you .orderList1:nth-child(1) div a img{
+    display: block;
+    margin-right: 20px;
+}
+.you .orderList1:nth-child(1) div p a:nth-child(2){
+    margin-left: 50px;
+}
+.you .orderList1 p{
+    margin-bottom:10px;
+    color: #757575;
+    font-size: 14px;
+}
+
+.you .hei strong{
+    font-weight: normal;
+    display: inline-block;
+    width: 75px;
+    text-align: right;
+}
+.you .hei span{
+    color: #A10000;
+}
+
+
+/*wuliu*/
+.wuliu{
+    display: none;
+    width: 235px;
+    border: 1px solid #A10000;
+    border-radius: 10px;
+    padding: 15px;
+    position: absolute;
+    z-index: 10;
+    top: 56px;
+    left: -16px;
+    background: #fff;
+    cursor: pointer;
+}
+.wuliu:before{
+    position: absolute;
+    top: -5px;
+    left: 50%;
+    width: 0;
+    height: 0;
+    margin-left: -5px;
+    vertical-align: middle;
+    content: " ";
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid #A10000;
+    border-left: 5px solid transparent;
+}
+.wuliu h4{
+    margin-bottom: 10px;
+    font-weight: normal;
+}
+.wuliu ul li{
+    background: url(../../../assets/img/dian2.png) no-repeat 0 7px;
+    padding-left: 10px;
+    margin-bottom: 5px;
+}
+.wuliu ul li:first-child{
+    color: #A10000;
+}
+
+.wuliu ul li a{
+    color: #A10000;
+    margin-left: 5px;
+}
+
+
+
+
+
+/*评价*/
+.Bott .you div.sx dl{
+    text-align: center;
+    width: 30%;
+    margin-right: 3.3%;
+    border-bottom: 1px solid #E6E6E6;
+}
+.Bott .you div.sx dl dt a{
+    padding: 10px;
+    display: block;
+}
+.Bott .you div.sx dl dd {
+    margin-bottom: 6px;
+}
+.Bott .you div.sx dl dd:nth-child(2) a{
+    cursor: pointer;
+    color: #A10000;
+}
+
+.Bott .you div.sx dl dd:last-child a{
+    cursor: pointer;
+    display: inline-block;
+    width: 110px;
+    height: 30px;
+    line-height: 30px;
+    background: #F4F4F4;
+    color: #666;
+    transition: all .5s;
+}
+.Bott .you div.sx div:nth-child(1) dl dd:last-child a:hover,
+.Bott .you div.sx div:nth-child(2) dl dd:last-child a:hover{
+    background: #A10000;
+    color: #fff;
+    transform: translate(0.5);
+}
+.Bott .you div.noz{
+    text-align: center;
+    font-size: 16px;
+    color: #b0b0b0;
+    margin: 60px 0;
+
+}
+
+
+/*logistic*/
+
+.logistic{
+    width: 980px;
+    margin:30px auto;
+}
+.logistic  ul{
+    padding-left: 75px;
+}
+.logistic li {
+    list-style: none;
+    position: relative;
+    border-bottom: 1px solid #f5f5f5;
+    margin-bottom: 8px;
+    padding-bottom: 8px;
+    color: #666;
+}
+.logistic li p {
+    line-height: 20px;
+}
+.logistic li.first {
+    color: #A10000;
+}
+.logistic li .before {
+    position: absolute;
+    left: -13px;
+    top: 20px;
+    height: 82%;
+    width: 0;
+    border-left: 2px solid #ddd;
+}
+.logistic  li .after {
+    position: absolute;
+    left: -16px;
+    top: 5px;
+    width: 8px;
+    height: 8px;
+    background: #ddd;
+    border-radius: 6px;
+}
+
+.logistic .bb{
+    background: url(../../../assets/img/bg.png) no-repeat 0 0;
+    position: absolute;
+    left: -20px;
+    top: 10px;
+    width: 41px;
+    height: 18px;
+    margin-left: -41px;
+    margin-top: -9px;
+}
+
+/*遮罩*/
+.mask{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 20;
+    display: none;
+}
+/*编辑个人信息*/
+.pj,.chak{
+    width: 410px;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    margin-top: -180px;
+    margin-left: -220px;
+    z-index: 30;
+    background: #fff;
+    border-radius: 10px;
+    padding: 15px;
+    display: none;
+}
+.pj div a,.chak div a{
+    width: 20px;
+    height: 20px;
+}
+.pj div a img,.chak div a img{
+    width: 100%;
+    display: block;
+}
+.pj h3,.chak h3{
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e6e6e6;
+}
+.pj form,.chak form{
+    padding: 40px 50px;
+}
+.pj form div.clearfix,.chak form div.clearfix{
+    margin-bottom: 10px;
+}
+.pj form div p:nth-child(1),.chak form div p:nth-child(1){
+    font-size: 14px;
+}
+.pj form p a,.chak form p a{
+    display: inline-block;
+}
+.pj form p a img,.chak form p a img{
+    display: block;
+    width: 100%;
+}
+.pj form textarea,.chak form textarea{
+    width: 100%;
+    height: 180px;
+    padding: 10px;
+    text-indent: 10px;
+}
+.pj form div.bc,.chak form div.bc{
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-around;
+}
+.pj form div input,.chak form div input{
+    display: inline-block;
+    width: 120px;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+    background: #fff;
+    border: 1px solid #e6e6e6;
+}
+.pj form div input:nth-child(1),.chak form div input:nth-child(1){
+    background: #A10000;
+    color: #FFFFFF;
+}
+
+

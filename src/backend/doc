@@ -1,0 +1,632 @@
+# To buy 文档
+
+
+## 商品
+
+### 商品类别列表
+
+Url: http://127.0.0.1:8000/store/categories/  
+Method: GET
+
+Params:
+
+```
+
+```
+
+Return:
+
+```json
+[
+    {
+        "id": 1,
+        "is_deleted": false,
+        "created_at": "2022-03-02T15:50:50Z",
+        "updated_at": "2022-03-02T15:51:05Z",
+        "name": "Cookies, Cakes, Desserts",
+        "description": null
+    },
+    {
+        "id": 2,
+        "is_deleted": false,
+        "created_at": "2022-03-02T15:50:50Z",
+        "updated_at": "2022-03-02T15:51:05Z",
+        "name": "Beverage, Milk Tea, Drink Mix\n",
+        "description": null
+    },
+    {
+        "id": 3,
+        "is_deleted": false,
+        "created_at": "2022-03-02T15:50:50Z",
+        "updated_at": "2022-03-02T15:51:05Z",
+        "name": "Jerky, Dried Seafood, Nuts",
+        "description": ""
+    },
+    {
+        "id": 4,
+        "is_deleted": false,
+        "created_at": "2022-03-02T15:50:50Z",
+        "updated_at": "2022-03-02T15:51:05Z",
+        "name": "Candy, Jelly, Chocolate",
+        "description": null
+    },
+    {
+        "id": 5,
+        "is_deleted": false,
+        "created_at": "2022-03-02T15:50:50Z",
+        "updated_at": "2022-03-02T15:51:05Z",
+        "name": "Chips & Crisps",
+        "description": null
+    }
+]
+```
+
+### 商品类别列表
+
+
+Url: http://127.0.0.1:8000/store/goods/?category_id=0&page=2&page_size=4  
+
+
+Method: GET
+
+Params:
+
+```python
+category    int # 传0获取所有商品，否则按id查询
+page			int # 页数
+page_size		int # 页面大小
+```
+
+Return:
+
+```json
+{
+  "count": 1082,
+  "next": "http://127.0.0.1:8000/store/goods/?category=0&page=3&page_size=4",
+  "previous": "http://127.0.0.1:8000/store/goods/?category=0&page_size=4",
+  "results": [
+    {
+      "id": 5,
+      "name": "Watermelon Stuffed Toast 480g",
+      "description": "Watermelon Stuffed Toast 480g",
+      "price": "13.99",
+      "brand": "SNACK LAB",
+      "inventory": 2687,
+      "sales": 665,
+      "image_url": "https://cdn.yamibuy.net/item/e48a8c0c3d06624a296ba46b340759c6_64x64.webp",
+      "discount": "1",
+      "category": 1
+    },
+    {
+      "id": 6,
+      "name": "Chinese Classic Milk Bread, 480g",
+      "description": "Chinese Classic Milk Bread, 480g",
+      "price": "6.49",
+      "brand": "ASIA FOODS",
+      "inventory": 4665,
+      "sales": 143,
+      "image_url": "https://cdn.yamibuy.net/item/73aaa07ee9ce88e58a568c856fe7ec95_64x64.webp",
+      "discount": "1",
+      "category": 1
+    },
+    {
+      "id": 7,
+      "name": "Breadsticks Cheese Flavor 380g",
+      "description": "Breadsticks Cheese Flavor 380g",
+      "price": "5.69",
+      "brand": "LEJINJI",
+      "inventory": 1279,
+      "sales": 1220,
+      "image_url": "https://cdn.yamibuy.net/item/aab10275f7280df7ea3456bf0cb40486_64x64.webp",
+      "discount": "1",
+      "category": 1
+    },
+    {
+      "id": 8,
+      "name": "Baked Cake Chocolate Flavor 95g",
+      "description": "Baked Cake Chocolate Flavor 95g",
+      "price": "2.29",
+      "brand": "Ranli",
+      "inventory": 9338,
+      "sales": 1595,
+      "image_url": "https://cdn.yamibuy.net/item/ee7bb39029b5f50a41eedcbafa4b5721_64x64.webp",
+      "discount": "1",
+      "category": 1
+    }
+  ]
+}
+```
+### 获取商品详情
+URL: http://127.0.0.1:8000/store/goods/1  
+Method: GET  
+Param: 
+```json
+id int 商品id
+```
+return    
+```json
+{
+    "id": 1,
+    "name": "Majime Millet Biscuits 130g",
+    "description": "Majime Millet Biscuits 130g",
+    "price": "3.29",
+    "brand": "NOMURA",
+    "inventory": 3290,
+    "sales": 1287,
+    "image_url": "https://cdn.yamibuy.net/item/5b7e5659e16cf59f0046e247babe0e3b_64x64.webp",
+    "discount": "1",
+    "category": 1
+}
+```
+
+### 首页推荐商品  
+URL：http://127.0.0.1:8000/store/front_recommend/  
+Method: GET  
+Return:  
+```json
+{
+        "id": 475,
+        "name": "Jinduigu Hand Made Tender Tofu Snack Five Spices Flavor 180g",
+        "description": "Jinduigu Hand Made Tender Tofu Snack Five Spices Flavor 180g",
+        "price": "2.79",
+        "brand": "Jinduigu Food",
+        "inventory": 3655,
+        "sales": 1999,
+        "image_url": "https://cdn.yamibuy.net/item/06749a72b83da39f7545e7814ed7c076_64x64.webp",
+        "discount": "1",
+        "category": 3
+    },
+    {
+        "id": 949,
+        "name": "JAGABEE Potato Cut French Fries Crisp Lightly Salted 113.4g",
+        "description": "JAGABEE Potato Cut French Fries Crisp Lightly Salted 113.4g",
+        "price": "3.39",
+        "brand": "CALBEE",
+        "inventory": 9857,
+        "sales": 1995,
+        "image_url": "https://cdn.yamibuy.net/item/e3487f800ebf4979c50d49290bc4cb4f_64x64.webp",
+        "discount": "1",
+        "category": 5
+    },
+    {
+        "id": 1040,
+        "name": "GF-Sparkling Water Grape Delight 330ml",
+        "description": "GF-Sparkling Water Grape Delight 330ml",
+        "price": "1.49",
+        "brand": "Genki Forest",
+        "inventory": 378,
+        "sales": 1995,
+        "image_url": "https://cdn.yamibuy.net/item/a62ba42c986d94541613499588e816ed_64x64.webp",
+        "discount": "1",
+        "category": 5
+    },
+    {
+        "id": 102,
+        "name": "Saltine Crackers 7packs",
+        "description": "Saltine Crackers 7packs",
+        "price": "2.49",
+        "brand": "HAITAI",
+        "inventory": 8468,
+        "sales": 1988,
+        "image_url": "https://cdn.yamibuy.net/item/202f959aeb8ab1db7c65eae8618834b3_64x64.webp",
+        "discount": "1",
+        "category": 1
+    },
+    {
+        "id": 260,
+        "name": "PRETZ  Sweet Corn Flavored Sticks 31g",
+        "description": "PRETZ  Sweet Corn Flavored Sticks 31g",
+        "price": "1.19",
+        "brand": "GLICO",
+        "inventory": 3232,
+        "sales": 1988,
+        "image_url": "https://cdn.yamibuy.net/item/2c3261642c1f6bd716d344f4e81dc002_64x64.webp",
+        "discount": "1",
+        "category": 1
+    },
+    {
+        "id": 795,
+        "name": "Fruit Candy Grape Flavor 48g",
+        "description": "Fruit Candy Grape Flavor 48g",
+        "price": "1.50",
+        "brand": "UHA",
+        "inventory": 8841,
+        "sales": 1988,
+        "image_url": "https://cdn.yamibuy.net/item/f61c14ec07dc20e264b6b9abb3457191_64x64.webp",
+        "discount": "1",
+        "category": 4
+    },
+    {
+        "id": 94,
+        "name": "HOKAIDO Dice Milk 40g",
+        "description": "HOKAIDO Dice Milk 40g",
+        "price": "5.00",
+        "brand": "HOKKAIDO",
+        "inventory": 6075,
+        "sales": 1976,
+        "image_url": "https://cdn.yamibuy.net/item/b2586c3279f6e2fbbb997a50f5fb8c9c_64x64.webp",
+        "discount": "1",
+        "category": 1
+    },
+    {
+        "id": 649,
+        "name": "CHUNWEI SPICY BRINED PORK EARS 60g",
+        "description": "CHUNWEI SPICY BRINED PORK EARS 60g",
+        "price": "3.39",
+        "brand": "CHUN WEI KITCHEN",
+        "inventory": 1347,
+        "sales": 1976,
+        "image_url": "https://cdn.yamibuy.net/item/db82b8780504640f2949c790d9aa53ae_64x64.webp",
+        "discount": "1",
+        "category": 3
+    },
+    {
+        "id": 745,
+        "name": "Orange Peel Gummy 150g",
+        "description": "Orange Peel Gummy 150g",
+        "price": "6.39",
+        "brand": "MushroomStorm",
+        "inventory": 1633,
+        "sales": 1972,
+        "image_url": "https://cdn.yamibuy.net/item/d3f9ea1a1e38f4fe5988e8ace139bec0_64x64.webp",
+        "discount": "1",
+        "category": 4
+    },
+    {
+        "id": 884,
+        "name": "KIT KAT Pistachio Chocolate wafer 11pc",
+        "description": "KIT KAT Pistachio Chocolate wafer 11pc",
+        "price": "6.00",
+        "brand": "NESTLE",
+        "inventory": 2695,
+        "sales": 1972,
+        "image_url": "https://cdn.yamibuy.net/item/04857e934c84dd7b67bab184988dc077_64x64.webp",
+        "discount": "1",
+        "category": 4
+    },
+    {
+        "id": 902,
+        "name": "Potato Chips Roasted Chicken Wing Flavor 70g",
+        "description": "Potato Chips Roasted Chicken Wing Flavor 70g",
+        "price": "2.29",
+        "brand": "Lay's",
+        "inventory": 46,
+        "sales": 1971,
+        "image_url": "https://cdn.yamibuy.net/item/7b27b4c8ee6ca75a54a6f92579f71e2e_64x64.webp",
+        "discount": "1",
+        "category": 5
+    },
+    {
+        "id": 1041,
+        "name": "Peach Flavored Drink 500ml",
+        "description": "Peach Flavored Drink 500ml",
+        "price": "1.49",
+        "brand": "MASTER KONG",
+        "inventory": 7262,
+        "sales": 1971,
+        "image_url": "https://cdn.yamibuy.net/item/df184be6903df5c50e016160915ab18a_64x64.webp",
+        "discount": "1",
+        "category": 5
+    },
+    {
+        "id": 747,
+        "name": "Kommyaku Jelly Grape Flavor 130g",
+        "description": "Kommyaku Jelly Grape Flavor 130g",
+        "price": "2.39",
+        "brand": "ORIHIRO",
+        "inventory": 4877,
+        "sales": 1955,
+        "image_url": "https://cdn.yamibuy.net/item/943189f88a4d9e6bcdab21edd4aa1b6d_64x64.webp",
+        "discount": "1",
+        "category": 4
+    },
+    {
+        "id": 308,
+        "name": "Unsweetened Oolong Tea 2L",
+        "description": "Unsweetened Oolong Tea 2L",
+        "price": "4.99",
+        "brand": "ITO EN",
+        "inventory": 6394,
+        "sales": 1923,
+        "image_url": "https://cdn.yamibuy.net/item/bd011f8945fc7e85ca6faef477d2f041_64x64.webp",
+        "discount": "1",
+        "category": 2
+    },
+    {
+        "id": 3,
+        "name": "DXC-Fruit Mochi Coconut Milk Flavor 210g",
+        "description": "DXC-Fruit Mochi Coconut Milk Flavor 210g",
+        "price": "4.39",
+        "brand": "Dao Xiang Cun",
+        "inventory": 6031,
+        "sales": 1911,
+        "image_url": "https://cdn.yamibuy.net/item/a7f662eb67e79a6425439e8bb6a93a41_64x64.webp",
+        "discount": "1",
+        "category": 1
+    }
+```
+
+
+## 用户
+
+### 登录
+
+Url: http://127.0.0.1:8000/account/login    **(比之前多了account目录)**
+
+Method: POST
+
+Params:
+
+```python
+email     		str # 邮箱
+phone_number	str # 电话号码
+password		str # 密码
+```
+
+Return:
+
+```json
+{
+    "id": 2,
+    "is_deleted": false,
+    "created_at": "2022-03-27T22:22:04Z",
+    "updated_at": "2022-03-28T09:55:47Z",
+    "name": "rsy",
+    "password": "123456",
+    "phone_number": "111",
+    "email": "test2@gmail.com",
+    "gender": 1,
+    "membership_expire_time": null,
+    "membership": 1
+}
+```
+
+### 注册前检查有没有重复的电话号码或邮箱
+
+Url: http://127.0.0.1:8000/account/register_check?email=test1@gmail.com&phone_number  **(比之前多了account目录)**
+
+Method: GET
+
+Params:
+
+```python
+email     		str # 邮箱
+phone_number	str # 电话号码
+```
+
+Return:
+
+```json
+{
+    "email": "test1@gmail.com",
+    "phone_number": "",
+    "count": 1
+}
+```
+
+### 注册
+
+Url: http://127.0.0.1:8000/account/register **(比之前多了account目录)**
+
+Method: POST
+
+Params:
+
+```Json
+name			str # 用户名
+email     		str # 邮箱
+phone_number	str # 电话号码
+password		str # 密码
+password2     	str # 确认密码
+gender			int # 性别：1男，2女，0默认
+```
+Return:
+
+```json
+{
+    "id": 14,
+    "is_deleted": false,
+    "created_at": "2022-03-28T15:41:06.956240Z",
+    "updated_at": "2022-03-28T15:41:06.956270Z",
+    "name": "test1",
+    "password": "123456",
+    "phone_number": "123456789",
+    "email": "test3@gmail.com",
+    "gender": 1,
+    "membership_expire_time": null,
+    "membership": 1
+}
+```
+
+## 购物车  
+### 查看某用户购物车
+URL：http://127.0.0.1:8000/store/cartitems/?user_id=1  
+Method: GET
+Params: 
+```Json
+user_id    int 用户名称
+```
+Return:  
+```Json
+{
+        "id": 1,
+        "user": 1,
+        "goods": {
+            "id": 1,
+            "name": "Majime Millet Biscuits 130g",
+            "description": "Majime Millet Biscuits 130g",
+            "price": "3.29",
+            "brand": "NOMURA",
+            "inventory": 3290,
+            "sales": 1287,
+            "image_url": "https://cdn.yamibuy.net/item/5b7e5659e16cf59f0046e247babe0e3b_64x64.webp",
+            "discount": "1",
+            "category": 1
+        },
+        "quantity": 2,
+        "total_price": 6.58
+    },
+    {
+        "id": 2,
+        "user": 1,
+        "goods": {
+            "id": 2,
+            "name": "Handmade Tiger Skin Cake 110g",
+            "description": "Handmade Tiger Skin Cake 110g",
+            "price": "3.59",
+            "brand": "Ranli",
+            "inventory": 4538,
+            "sales": 166,
+            "image_url": "https://cdn.yamibuy.net/item/542b6e1d182d6703bbd6c89fab1db635_64x64.webp",
+            "discount": "1",
+            "category": 1
+        },
+        "quantity": 50,
+        "total_price": 179.5
+    }
+```
+
+### 添加购物车物品(已经有的话为添加，没有为创建)
+URL：http://127.0.0.1:8000/store/cartitems/  
+Method: POST  
+Params:  
+```Json
+user   int 用户id
+goods  int 商品id  
+quantity int 商品个数
+```
+Return:
+```Json
+{ 
+    "id": 1, 
+    "user": 1,
+    "goods": 1,
+    "quantity": 2
+}
+
+```
+### 修改物品数量
+URL： http://127.0.0.1:8000/store/cartitems/1/?user_id=1  
+METHOD=patch  
+Params:
+```json
+quantity int 商品个数
+```
+REturn:  
+```json
+"id": 1,
+    "user": 1,
+    "goods": {
+        "id": 1,
+        "name": "Majime Millet Biscuits 130g",
+        "description": "Majime Millet Biscuits 130g",
+        "price": "3.29",
+        "brand": "NOMURA",
+        "inventory": 3290,
+        "sales": 1287,
+        "image_url": "https://cdn.yamibuy.net/item/5b7e5659e16cf59f0046e247babe0e3b_64x64.webp",
+        "discount": "1",
+        "category": 1
+    },
+    "quantity": 5,
+    "total_price": 16.45
+```
+
+## 地址 
+### 查看user地址：  
+URL： http://127.0.0.1:8000/customers/1/address/  **（比之前少了user目录）**  
+method=Get
+Params:  
+```Json
+userid int 用户id
+```
+Return:  
+```Json
+"count": 2,
+    "next": null,
+    "previous": null,
+    "results": [
+        {
+            "id": 1,
+            "receiver_first_name": "Tristam",
+            "receiver_last_name": "Cacacie",
+            "state": "Washington",
+            "county": "Walla Walla County",
+            "street": "20 Stone Corner Plaza",
+            "post_code": "57013",
+            "receiver_phone_number": "2848080088",
+            "is_default": 0,
+            "user": 1,
+            "free_delivery": true"
+        },
+        {
+            "id": 1001,
+            "receiver_first_name": "Tristam1",
+            "receiver_last_name": "Cacacie1",
+            "state": "Illinois",
+            "county": "Walla Walla County1",
+            "street": "20 Stone Corner Plaza1",
+            "post_code": "57013",
+            "receiver_phone_number": "2848080089",
+            "is_default": 0,
+            "user": 1, 
+            "free_delivery": true"
+        }
+    ]
+```
+
+### create a new address: 
+URL: http://127.0.0.1:8000/customers/1/address/  （比之前少了user目录）
+Method: POST  
+Params: 
+```Json
+"receiver_first_name": "",
+    "receiver_last_name": "",
+    "state": "",
+    "county": "",
+    "street": "",
+    "post_code": "",
+    "receiver_phone_number": "",
+    "user":  #用户id
+```
+Return：
+```Json
+{
+    "id": 1002,
+    "receiver_first_name": "Tristam1",
+    "receiver_last_name": "Cacacie1",
+    "state": "Illinois",
+    "county": "Walla Walla County1",
+    "street": "20 Stone Corner Plaza1",
+    "post_code": "57013",
+    "receiver_phone_number": "2848080089",
+    "is_default": 0,
+    "user": 1,
+    "free_delivery": true"
+}
+```
+
+### 修改地址:  
+URL: http://127.0.0.1:8000/customers/1/address/1  **（比之前少了user目录)**
+MEthod: Patch  
+Params:  
+```Json
+user int 用户id
+address_id int 地址id
+```
+Return：  
+```Json
+{
+    "id": 1,
+    "receiver_first_name": "Tristamr",
+    "receiver_last_name": "Cacacie",
+    "state": "Washington",
+    "county": "Walla Walla County",
+    "street": "20 Stone Corner Plaza",
+    "post_code": "57013",
+    "receiver_phone_number": "2848080088",
+    "is_default": 0,
+    "user": 1,
+    "free_delivery": true"
+}
+```
